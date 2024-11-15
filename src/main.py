@@ -1,8 +1,10 @@
-from textnode import TextNode
+from main_functions import extract_title, copy_static, generate_pages_recursive
+
 
 def main():
-    some_text_node = TextNode("This is a text node", "bold", "https://www.boot.dev")
-    print(some_text_node.__repr__())
+    copy_static('./static', './public')
+    generate_pages_recursive('./content', './template.html', './public')
+
 
 if __name__ == "__main__":
     main()
